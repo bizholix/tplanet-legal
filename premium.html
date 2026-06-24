@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Premium — TradePlanet</title>
+<meta name="description" content="Premium for TradePlanet — the peer-to-peer barter marketplace.">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  background:hsl(240,10%,3%);
+  color:hsl(0,0%,95%);
+  line-height:1.6;
+  min-height:100vh;
+  background-image:
+    radial-gradient(circle at 15% 20%, hsla(190,100%,50%,0.08), transparent 45%),
+    radial-gradient(circle at 85% 80%, hsla(270,80%,60%,0.10), transparent 45%);
+}
+a{color:hsl(190,100%,60%);text-decoration:none}
+a:hover{text-decoration:underline}
+header.site{
+  position:sticky;top:0;z-index:30;
+  background:hsla(240,10%,3%,0.85);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid hsla(0,0%,100%,0.08);
+  padding:16px 20px;
+}
+header.site .inner{max-width:780px;margin:0 auto;display:flex;align-items:center;gap:12px}
+header.site h1{
+  font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.2em;
+  margin:0;color:#fff;
+}
+.back{color:hsl(0,0%,65%);font-size:13px}
+main{max-width:780px;margin:0 auto;padding:32px 20px 80px}
+.last-updated{
+  font-size:11px;text-transform:uppercase;letter-spacing:.2em;
+  color:hsl(0,0%,55%);margin:0 0 28px;
+}
+section{margin-bottom:32px}
+h2{
+  font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.18em;
+  color:#fff;margin:0 0 12px;
+  font-family:'Space Grotesk','Inter',sans-serif;
+}
+p{font-size:14px;color:hsl(0,0%,88%);margin:0 0 10px}
+ul{font-size:14px;color:hsl(0,0%,88%);padding-left:22px;margin:0 0 10px}
+li{margin-bottom:4px}
+.warning{
+  border-left:2px solid hsl(0,72%,55%);
+  padding-left:14px;
+}
+.notice{
+  font-weight:700;color:hsl(270,80%,70%);
+}
+hr{border:none;border-top:1px solid hsla(0,0%,100%,0.08);margin:24px 0}
+.contact-mail{font-weight:700}
+footer.site{
+  max-width:780px;margin:40px auto 0;padding:24px 20px;
+  border-top:1px solid hsla(0,0%,100%,0.08);
+  font-size:11px;color:hsl(0,0%,50%);text-align:center;text-transform:uppercase;letter-spacing:.2em;
+}
+@media(max-width:520px){
+  main{padding:20px 16px 60px}
+  h2{font-size:12px}
+  p,ul{font-size:13.5px}
+}
+
+main.premium{max-width:1100px}
+.hero{text-align:center;padding:48px 0 32px;display:flex;flex-direction:column;align-items:center;gap:18px}
+.badge-icon{
+  width:80px;height:80px;border-radius:24px;
+  background:linear-gradient(135deg,hsl(190,100%,50%),hsl(270,80%,60%));
+  display:flex;align-items:center;justify-content:center;font-size:38px;
+  box-shadow:0 0 40px hsla(190,100%,50%,0.4);
+}
+.hero h1{
+  font-size:42px;font-weight:800;text-transform:uppercase;letter-spacing:-.01em;margin:0;max-width:720px;
+  background:linear-gradient(135deg,hsl(190,100%,60%),hsl(270,80%,70%));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  font-family:'Space Grotesk','Inter',sans-serif;line-height:1.1;
+}
+.hero p.sub{font-size:15px;color:hsl(0,0%,70%);max-width:600px;margin:0}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:8px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.2em;
+  padding:14px 24px;border-radius:10px;cursor:pointer;border:none;
+  transition:all .2s;
+}
+.btn-primary{
+  background:linear-gradient(135deg,hsl(190,100%,50%),hsl(270,80%,60%));
+  color:#fff;box-shadow:0 0 24px hsla(190,100%,50%,0.35);
+}
+.btn-primary:hover{box-shadow:0 0 36px hsla(190,100%,50%,0.55);text-decoration:none}
+.btn-outline{
+  background:hsla(0,0%,100%,0.04);
+  border:1px solid hsla(0,0%,100%,0.15);
+  color:#fff;
+}
+.btn-outline:hover{background:hsla(0,0%,100%,0.08);text-decoration:none}
+.section-head{text-align:center;margin-bottom:24px}
+.section-head h2{
+  font-size:28px;letter-spacing:-.01em;
+  background:linear-gradient(135deg,hsl(190,100%,60%),hsl(270,80%,70%));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.section-head p{color:hsl(0,0%,65%);font-size:13px}
+.block{margin:64px 0}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:760px){.grid-2{grid-template-columns:1fr}.hero h1{font-size:32px}}
+.card{
+  background:hsla(0,0%,100%,0.03);
+  border:1px solid hsla(0,0%,100%,0.08);
+  border-radius:16px;padding:24px;
+  backdrop-filter:blur(8px);
+}
+.card.featured{
+  border-color:hsla(190,100%,50%,0.4);
+  background:hsla(0,0%,100%,0.05);
+  box-shadow:0 0 30px hsla(190,100%,50%,0.2);
+  position:relative;
+}
+.pop-badge{
+  position:absolute;top:-12px;left:50%;transform:translateX(-50%);
+  background:linear-gradient(135deg,hsl(190,100%,50%),hsl(270,80%,60%));
+  color:#fff;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.2em;
+  padding:4px 12px;border-radius:999px;
+}
+.plan-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:hsl(0,0%,55%);display:block;margin-bottom:6px}
+.featured .plan-label{color:hsl(190,100%,60%)}
+.price{font-size:38px;font-weight:800;color:#fff}
+.featured .price{background:linear-gradient(135deg,hsl(190,100%,60%),hsl(270,80%,70%));-webkit-background-clip:text;background-clip:text;color:transparent}
+.price-unit{font-size:13px;color:hsl(0,0%,55%);margin-left:4px}
+.plan-note{font-size:12px;color:hsl(0,0%,55%);margin:6px 0 16px}
+.feat-list{list-style:none;padding:0;margin:0 0 18px;font-size:13px}
+.feat-list li{padding:5px 0;color:hsl(0,0%,90%);display:flex;align-items:center;gap:8px}
+.feat-list li::before{content:"✓";color:hsl(190,100%,55%);font-weight:700}
+.save-tag{display:inline-block;background:hsla(190,100%,50%,0.8);color:#000;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.2em;padding:2px 8px;border-radius:4px;margin-left:8px;vertical-align:middle}
+.feature-card .ficon{
+  width:40px;height:40px;border-radius:10px;
+  background:linear-gradient(135deg,hsl(190,100%,50%),hsl(270,80%,60%));
+  display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:10px;
+}
+.feature-card h3{font-size:13px;text-transform:uppercase;letter-spacing:.05em;margin:0 0 6px;color:#fff}
+.feature-card p{font-size:12.5px;color:hsl(0,0%,65%);margin:0 0 10px}
+.feature-card ul{font-size:12.5px;padding-left:18px;margin:0;color:hsl(0,0%,85%)}
+table.compare{width:100%;border-collapse:collapse;background:hsla(0,0%,100%,0.03);border-radius:16px;overflow:hidden;border:1px solid hsla(0,0%,100%,0.08)}
+table.compare th,table.compare td{padding:14px;font-size:13px;border-bottom:1px solid hsla(0,0%,100%,0.06)}
+table.compare th{font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:hsl(0,0%,55%);text-align:left}
+table.compare th.center,table.compare td.center{text-align:center}
+table.compare th.premium{color:hsl(190,100%,60%)}
+table.compare td.premium{background:hsla(190,100%,50%,0.05)}
+table.compare tr:last-child td{border-bottom:none}
+.faq h3{font-size:14px;color:#fff;margin:0 0 6px}
+.faq p{font-size:13px;color:hsl(0,0%,70%);margin:0}
+.btn-block{display:block;width:100%;text-align:center}
+</style>
+</head>
+<body>
+<header class="site"><div class="inner"><a class="back" href="./index.html">←</a><h1>Premium</h1></div></header>
+<main class="premium">
+
+<section class="hero">
+  <div class="badge-icon">✦</div>
+  <h1>Upgrade to TPlanet Premium</h1>
+  <p class="sub">Get more visibility, better insights, and powerful tools to complete more trades and sales.</p>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="#pricing">✦ Upgrade to Premium</a>
+    <a class="btn btn-outline" href="#features">View Features</a>
+  </div>
+</section>
+
+<section class="block" id="pricing">
+  <div class="section-head"><h2>Simple, transparent pricing</h2><p>Choose the plan that works for you. Cancel anytime.</p></div>
+  <div class="grid-2">
+    <div class="card">
+      <span class="plan-label">Monthly</span>
+      <div><span class="price">€4.99</span><span class="price-unit">/ month</span></div>
+      <p class="plan-note">Billed monthly. Cancel anytime.</p>
+      <ul class="feat-list"><li>Boosted Listings</li><li>Premium Listing Analytics</li><li>Premium Profile Analytics</li><li>Unlimited Sell Listings</li><li>Priority Marketplace Visibility</li><li>Future Premium Features</li></ul>
+      <a class="btn btn-outline btn-block" href="#">Start Premium</a>
+    </div>
+    <div class="card featured">
+      <span class="pop-badge">Most Popular</span>
+      <span class="plan-label">Yearly <span class="save-tag">Save 17%</span></span>
+      <div><span class="price">€49.99</span><span class="price-unit">/ year</span></div>
+      <p class="plan-note">Equivalent to €4.17 / month. Billed annually.</p>
+      <ul class="feat-list"><li>Boosted Listings</li><li>Premium Listing Analytics</li><li>Premium Profile Analytics</li><li>Unlimited Sell Listings</li><li>Priority Marketplace Visibility</li><li>Future Premium Features</li></ul>
+      <a class="btn btn-primary btn-block" href="#">Start Premium</a>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="features">
+  <div class="section-head"><h2>Premium Features</h2><p>Everything you need to trade and sell more effectively.</p></div>
+  <div class="grid-2"><div class="card feature-card"><div class="ficon">🚀</div><h3>Boosted Listings</h3><p>Increase visibility and appear higher in relevant search results and discovery sections.</p><ul><li>Increased exposure</li><li>More views</li><li>More potential trade offers</li><li>More chat requests</li></ul></div><div class="card feature-card"><div class="ficon">📊</div><h3>Listing Analytics</h3><p>See exactly how your listings perform across the marketplace.</p><ul><li>👀 Listing Views — e.g. 1,245 Views</li><li>❤️ Wishlist Saves — e.g. 18 Saves</li><li>🚀 Boost Clicks — e.g. 74 Clicks</li></ul></div><div class="card feature-card"><div class="ficon">👤</div><h3>Profile Analytics</h3><p>Understand how users interact with your profile and listings.</p><ul><li>Profile Views</li><li>Total Listing Views</li><li>Response Statistics</li><li>Listing Performance Insights</li></ul></div><div class="card feature-card"><div class="ficon">🏷️</div><h3>Unlimited Sell Listings</h3><p>Free accounts include 1 active sell listing. Premium removes the cap.</p><ul><li>Free: 1 active sell listing</li><li>Premium: Unlimited sell listings</li><li>Trade listings remain unlimited for all users</li></ul></div><div class="card feature-card"><div class="ficon">⭐</div><h3>Priority Visibility</h3><p>Premium listings receive enhanced placement across the platform.</p><ul><li>Search Results</li><li>Recommended Listings</li><li>Discovery Sections</li></ul></div><div class="card feature-card"><div class="ficon">🎁</div><h3>Future Premium Benefits</h3><p>Premium members automatically get access to future Premium features as they ship.</p></div></div>
+</section>
+
+<section class="block">
+  <div class="section-head"><h2>Free vs Premium</h2></div>
+  <table class="compare">
+    <thead><tr><th>Feature</th><th class="center">Free</th><th class="center premium">Premium</th></tr></thead>
+    <tbody><tr><td>Unlimited Trade Listings</td><td class="center"><span style="color:hsl(190,100%,60%);font-weight:700">✓</span></td><td class="center premium"><span style="color:hsl(190,100%,60%);font-weight:700">✓</span></td></tr><tr><td>Sell Listings</td><td class="center"><strong>1</strong></td><td class="center premium"><strong>Unlimited</strong></td></tr><tr><td>Wishlist</td><td class="center"><span style="color:hsl(190,100%,60%);font-weight:700">✓</span></td><td class="center premium"><span style="color:hsl(190,100%,60%);font-weight:700">✓</span></td></tr><tr><td>Nearby Trades</td><td class="center"><span style="color:hsl(190,100%,60%);font-weight:700">✓</span></td><td class="center premium"><span style="color:hsl(190,100%,60%);font-weight:700">✓</span></td></tr><tr><td>Standard Matching</td><td class="center"><span style="color:hsl(190,100%,60%);font-weight:700">✓</span></td><td class="center premium"><span style="color:hsl(190,100%,60%);font-weight:700">✓</span></td></tr><tr><td>Standard Chat</td><td class="center"><span style="color:hsl(190,100%,60%);font-weight:700">✓</span></td><td class="center premium"><span style="color:hsl(190,100%,60%);font-weight:700">✓</span></td></tr><tr><td>Boosted Listings</td><td class="center"><span style="color:hsl(0,0%,35%)">×</span></td><td class="center premium"><span style="color:hsl(190,100%,60%);font-weight:700">✓</span></td></tr><tr><td>Listing Analytics</td><td class="center"><span style="color:hsl(0,0%,35%)">×</span></td><td class="center premium"><span style="color:hsl(190,100%,60%);font-weight:700">✓</span></td></tr><tr><td>Profile Analytics</td><td class="center"><span style="color:hsl(0,0%,35%)">×</span></td><td class="center premium"><span style="color:hsl(190,100%,60%);font-weight:700">✓</span></td></tr><tr><td>Priority Visibility</td><td class="center"><span style="color:hsl(0,0%,35%)">×</span></td><td class="center premium"><span style="color:hsl(190,100%,60%);font-weight:700">✓</span></td></tr><tr><td>Future Premium Features</td><td class="center"><span style="color:hsl(0,0%,35%)">×</span></td><td class="center premium"><span style="color:hsl(190,100%,60%);font-weight:700">✓</span></td></tr></tbody>
+  </table>
+</section>
+
+<section class="block">
+  <div class="grid-2">
+    <div class="card">
+      <div class="ficon" style="width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,hsl(190,100%,50%),hsl(270,80%,60%));display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:10px">💳</div>
+      <h3 style="font-size:13px;text-transform:uppercase;letter-spacing:.05em;margin:0 0 10px;color:#fff">Billing Information</h3>
+      <ul class="feat-list">
+        <li>Secure payment processing</li><li>Recurring subscription</li><li>Cancel anytime</li><li>No long-term commitment</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="ficon" style="width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,hsl(190,100%,50%),hsl(270,80%,60%));display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:10px">↻</div>
+      <h3 style="font-size:13px;text-transform:uppercase;letter-spacing:.05em;margin:0 0 10px;color:#fff">Refunds</h3>
+      <p style="font-size:13px;color:hsl(0,0%,70%);margin:0 0 12px">Refunds may be requested within 14 days of the initial subscription purchase, subject to the Refund Policy.</p>
+      <a href="./refund-policy.html" style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:hsl(190,100%,60%)">Read the Refund Policy →</a>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="section-head"><h2>Frequently Asked Questions</h2></div>
+  <div class="grid-2"><div class="card faq"><h3>Can I cancel anytime?</h3><p>Yes. You can cancel your subscription at any time. Premium access remains active until the end of the current billing period.</p></div><div class="card faq"><h3>What payment methods are supported?</h3><p>Payment methods supported by Paddle will be displayed during checkout.</p></div><div class="card faq"><h3>Will I lose my data if I cancel?</h3><p>No. Your account and listings remain intact. Premium-only features become unavailable after the subscription expires.</p></div><div class="card faq"><h3>Can I upgrade later?</h3><p>Yes. You can upgrade to Premium at any time.</p></div></div>
+</section>
+
+</main>
+<footer class="site">© TradePlanet · TPlanet</footer>
+</body>
+</html>
